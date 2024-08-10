@@ -1,0 +1,17 @@
+https://www.freecodecamp.org/news/build-web-apis-with-nestjs-beginners-guide/
+
+npm run start:dev
+
+http://localhost:3000/api/v1/auth/signup
+http://localhost:3000/api/v1/auth/login
+http://localhost:3000/api/v1/posts
+
+--------------------------------
+
+https://medium.com/@niyam-muliya/nestjs-and-its-crud-operations-54b5dd7d6195
+
+-----------------------------------------------
+
+https://github.com/kuros/blog-code/blob/master/nestjs/gcp-storage/src/media/media.controller.ts
+https://notiz.dev/blog/type-safe-file-downloads
+https://medium.com/@endySantoso/receive-and-parse-a-csv-file-with-nestjs-part-1-15a6a31eeefc

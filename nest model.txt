@@ -1,18 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
-generator client {
-  provider = "prisma-client-js"
-}
-
-datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
-}
-
 model User {
   id            Int         @id @default(autoincrement())
   name          String
@@ -20,8 +5,11 @@ model User {
   password      String
   createdAt     DateTime    @default(now())
   updatedAt     DateTime    @updatedAt
+  city          City?       @relation(fields: [cityId], references: [id])
   cityId        Int?
+  state         State?      @relation(fields: [stateId], references: [id])
   stateId       Int?
+  country       Country?    @relation(fields: [countryId], references: [id])
   countryId     Int?
 }
 
@@ -30,7 +18,9 @@ model Country {
   name          String      
   isActive      Boolean     @default(true)
   isDeleted     Boolean     @default(false)
+  updatedBy     User?       @relation(fields: [updatedById], references: [id])
   updatedById   Int?
+  createdBy     User?       @relation(fields: [createdById], references: [id])
   createdById   Int?
   createdAt     DateTime    @default(now())
   updatedAt     DateTime    @updatedAt
@@ -40,11 +30,14 @@ model Country {
 
 model State {
   id            Int         @id @default(autoincrement())
+  country       Country?    @relation(fields: [countryId], references: [id])
   countryId     Int?
   name          String      
   isActive      Boolean     @default(true)
   isDeleted     Boolean     @default(false)
+  updatedBy     User?       @relation(fields: [updatedById], references: [id])
   updatedById   Int?
+  createdBy     User?       @relation(fields: [createdById], references: [id])
   createdById   Int?
   createdAt     DateTime    @default(now())
   updatedAt     DateTime    @updatedAt
@@ -54,12 +47,16 @@ model State {
 
 model City {
   id            Int         @id @default(autoincrement())
+  state         State?      @relation(fields: [stateId], references: [id])
   stateId       Int?
+  country       Country?    @relation(fields: [countryId], references: [id])
   countryId     Int?
   name          String      
   isActive      Boolean     @default(true)
   isDeleted     Boolean     @default(false)
+  updatedBy     User?       @relation(fields: [updatedById], references: [id])
   updatedById   Int?
+  createdBy     User?       @relation(fields: [createdById], references: [id])
   createdById   Int?
   createdAt     DateTime    @default(now())
   updatedAt     DateTime    @updatedAt

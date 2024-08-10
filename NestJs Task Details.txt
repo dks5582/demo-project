@@ -1,0 +1,45 @@
+1. New Project creation
+	-> npx @nestjs/cli new DemoProject
+	-> go to project directory  - cd demo-project
+	-> start project - npm run start or npm run start:dev
+	-> check version - nest info
+
+2. GitHub
+	-> Create Repository demo-project on my account
+	-> go to project directory - git init
+	-> add remote origin - git remote add origin https://github.com/dks5582/demo-project.git
+	-> git status
+	-> git add .
+	-> git commit -m "Demo-Project"
+	-> git push origin master
+
+3. Configure Prisma 
+	-> Install Prisma - npm install -D prisma
+	-> Initialize Prisma - npx prisma init
+		-> automatic create prisma->schema.prisma and .env file
+	-> Configure .env 
+		-> DATABASE_URL="postgresql://UserName:Password@localhost:5432/DatabaseName"
+	-> Configure User model in schema.prisma
+	-> Migrate database for create User table
+		-> npx prisma migrate dev --name "init"
+		-> also generate Prisma Client at @prisma/client package inside dependencies
+
+4. CRUD Operation
+	-> Generate new resource - npx nest generate resource
+		-> resource - users
+		-> Transport Layer - REST API
+		-> CRUD Operation - yes
+
+
+
+
+
+
+
+
+Next steps:
+1. Set the DATABASE_URL in the .env file to point to your existing database. If your database has no tables yet, read https://pris.ly/d/getting-started
+2. Set the provider of the datasource block in schema.prisma to match your database: postgresql, mysql, sqlite, sqlserver, mongodb or cockroachdb.
+3. Run prisma db pull to turn your database schema into a Prisma schema.
+4. Run prisma generate to generate the Prisma Client. You can then start querying your database.
+5. Tip: Explore how you can extend the ORM with scalable connection pooling, global caching, and real-time database events. Read: https://pris.ly/cli/beyond-orm
