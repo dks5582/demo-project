@@ -1,0 +1,342 @@
+As part of our upcoming projects, we have outlined a comprehensive set of tasks designed to develop your skills in NestJS, Prisma, PostgreSQL, and related technologies. These tasks range from beginner to expert levels and will help you build a strong foundation and advance your expertise.
+
+Beginner Level Tasks
+
+
+Project Setup
+- Set up a new NestJS project with the latest version.
+- Initialize a Git repository and push the initial setup to GitHub.
+- Configure environment variables using @nestjs/config.
+
+Basic CRUD Operations
+- Implement basic CRUD (Create, Read, Update, Delete) for the user.
+- Use DTOs (Data Transfer Objects) for validation.
+
+Database Integration
+- Set up Prisma and connect it to a PostgreSQL database.
+- Implement raw queries to fetch data.
+
+JWT Authentication
+- Implement JWT authentication for the user.
+- Protect routes using JWT guards.
+
+Intermediate Level Tasks
+
+
+Seeding Database
+- Write and execute seed scripts for users, countries, states, and cities.
+
+Advanced CRUD Operations
+- Extend CRUD operations to include countries, states, and cities.
+- Add relationships between these entities.
+
+Validation and Exception Handling
+- Implement advanced validations in DTOs.
+- Create common exception filters and use them across the application.
+
+Role-based Access Control
+- Implement role-based guards.
+- Assign roles to users and protect routes based on roles.
+
+Pagination
+- Implement pagination for user, countries, states, and cities endpoints.
+- Ensure the pagination is efficient and handles large datasets gracefully.
+
+Advanced Level Tasks
+
+
+Documentation
+- Use Swagger to document the API.
+- Generate project documentation using CompDoc.
+
+Performance Optimization
+- Analyze and optimize database queries for performance.
+- Implement caching mechanisms where necessary.
+
+Testing
+- Write unit and integration tests for the services and controllers.
+- Use Jest for testing.
+
+Error Handling and Logging
+- Implement a global exception filter for consistent error handling.
+- Set up logging using nestjs-pino integrated with pino-pretty.
+
+File Upload and Management
+- Implement file upload functionality using Multer.
+- Store uploaded files in a cloud storage service (e.g., AWS S3, Google Cloud Storage).
+
+CI/CD Integration
+- Set up a CI/CD pipeline using GitHub Actions or another CI/CD service.
+- Automate testing, linting, and deployment processes.
+
+Expert Level Tasks
+
+
+Advanced Database Operations
+- Implement complex raw SQL queries using Prisma.
+- Create database views and stored procedures as needed.
+
+Environment Configuration
+- Manage multiple environments (development, testing, production) with environment variables.
+- Implement a configuration module to handle environment-specific settings.
+
+Complex CRUD Operations
+- Implement soft deletes for users, countries, states, and cities.
+- Add search functionality with multiple filter options for these entities.
+
+Real-time Features
+- Implement WebSocket or Server-Sent Events for real-time communication.
+
+Security Enhancements
+- Implement rate limiting to protect against brute-force attacks.
+- Add input sanitization to prevent SQL injection and XSS attacks.
+- Configure Helmet middleware for enhanced security headers.
+
+Email Notifications
+- Set up an email service to send notifications (e.g., account verification, password reset).
+- Use a service like SendGrid or Amazon SES for sending emails.
+
+Microservices Architecture
+- Break down the monolithic application into microservices using NestJS microservices.
+- Implement communication between services using a message broker (e.g., RabbitMQ, Kafka).
+
+Containerization
+- Dockerize the application for consistent development and deployment environments.
+- Set up Docker Compose for multi-container applications (e.g., API, database, cache).
+
+Monitoring and Metrics
+- Integrate monitoring and metrics using Prometheus and Grafana.
+- Set up health checks and logging for observability.
+
+These tasks are designed to challenge and develop your skills progressively. Please start with the beginner level tasks and proceed to the more advanced ones as you complete each stage. If you have any questions or need assistance at any point, feel free to reach out.
+
+Looking forward to seeing your progress!
+
+Best regards,
+Dharmesh Patel
+Hello Frontend Developers,
+
+I hope this message finds you well.
+
+As part of our upcoming projects, we have outlined a comprehensive set of tasks designed to develop your skills in React.js and related technologies. These tasks range from beginner to expert levels and will help you build a strong foundation and advance your expertise. Please note that the project must be developed in TypeScript and not created using Create React App.
+
+Beginner Level Tasks
+
+
+Project Setup
+- Set up a new React.js project using a custom setup (e.g., using Webpack or Vite) and TypeScript.
+- Initialize a Git repository and push the initial setup to GitHub.
+- Configure environment variables using a .env file.
+
+Basic CRUD Operations
+- Implement basic CRUD (Create, Read, Update, Delete) operations for the user module.
+- Use React Hook Form for managing form state and validation.
+
+State Management
+- Integrate Redux for state management.
+- Set up basic state slices for the user module.
+
+Routing
+- Set up React Router for client-side routing.
+- Implement routes for basic CRUD operations.
+
+Intermediate Level Tasks
+
+
+JWT Authentication
+- Implement JWT authentication in the React app.
+- Store JWT tokens securely and handle token expiration.
+
+Advanced CRUD Operations
+- Extend CRUD operations to include countries, states, and cities modules.
+- Use React Hook Form for managing forms in these modules.
+
+State Management with Redux-Saga
+- Implement Redux-Saga for handling asynchronous API calls.
+- Manage side effects and handle errors gracefully.
+
+Error Boundaries
+- Implement error boundaries to catch and handle errors in components.
+- Display user-friendly error messages.
+
+Preventing Re-renders
+- Optimize components to prevent unnecessary re-renders using React.memo and useMemo.
+
+Pagination
+- Implement pagination for user, countries, states, and cities endpoints.
+- Ensure the pagination is efficient and handles large datasets gracefully.
+
+Advanced Level Tasks
+
+
+Infinite Scrolling
+- Implement infinite scrolling for lists of users, countries, states, and cities.
+- Ensure smooth and efficient data fetching.
+
+WebSocket Integration
+- Implement WebSocket for real-time data updates.
+- Set up a notification system for real-time alerts.
+
+Performance Optimization
+- Analyze and optimize the performance of the React app.
+- Use React Profiler and other tools to identify and fix performance bottlenecks.
+
+Microfrontend Architecture
+- Break down the monolithic application into microfrontends.
+- Integrate microfrontends using a framework like Single-SPA or Module Federation in Webpack.
+
+React Tables
+- Use React Table to implement advanced table functionalities.
+- Implement sorting, filtering, and pagination features.
+
+Expert Level Tasks
+
+
+Storage Management
+- Implement storage management using local storage, session storage and indexedDB.
+- Securely store sensitive data.
+
+Comprehensive Documentation
+- Document the entire project, including setup, architecture, and individual components.
+- Ensure the documentation is easy to understand and follow.
+
+Testing
+- Write unit and integration tests for the components and hooks.
+- Use testing libraries like Jest and React Testing Library.
+
+CI/CD Integration
+- Set up a CI/CD pipeline using GitHub Actions or another CI/CD service.
+- Automate testing, linting, and deployment processes.
+
+Security Enhancements
+- Implement security best practices to protect against XSS, CSRF, and other attacks.
+- Regularly update dependencies to mitigate security vulnerabilities.
+
+Monitoring and Metrics
+- Integrate monitoring and metrics using tools like Sentry and Datadog.
+- Set up logging for observability.
+
+UI/UX Components
+- Develop reusable UI components such as tables, checkboxes, radio buttons, and autocomplete dropdowns.
+- Ensure good UI/UX design practices are followed to provide a seamless user experience.
+
+These tasks are designed to challenge and develop your skills progressively. Please start with the beginner-level tasks and proceed to the more advanced ones as you complete each stage. If you have any questions or need assistance at any point, feel free to reach out.
+
+Looking forward to seeing your progress!
+
+Best regards,
+
+Dharmesh Patel
+
+
+/************** Country **************/
+[
+  {
+    "tableName": "COUNTRY",
+    "attributes": {
+      "name": {
+        "type": "STRING"
+      },
+      "code": {
+        "type": "STRING"
+      },
+      "isActive": {
+        "type": "BOOLEAN",
+        "defaultsTo": true
+      },
+      "isDeleted": {
+        "type": "BOOLEAN",
+        "defaultsTo": false
+      },
+      "updatedBy": {
+        "model": "User"
+      },
+      "createdBy": {
+        "model": "User"
+      },
+      "sortingSequence": {
+        "type": "number"
+      },
+      "syncId": {
+        "type": "STRING"
+      }
+    }
+  }
+]
+
+/************** State **************/
+[
+  {
+    "tableName": "STATE",
+    "attributes": {
+      "name": {
+        "type": "STRING"
+      },
+      "stateCode": {
+        "type": "STRING"
+      },
+      "countryId": {
+        "model": "Country"
+      },
+      "isActive": {
+        "type": "BOOLEAN",
+        "defaultsTo": true
+      },
+      "isDeleted": {
+        "type": "BOOLEAN",
+        "defaultsTo": false
+      },
+      "updatedBy": {
+        "model": "User"
+      },
+      "createdBy": {
+        "model": "User"
+      },
+      "sortingSequence": {
+        "type": "number"
+      },
+      "syncId": {
+        "type": "string"
+      }
+    }
+  }
+]
+
+/************** City **************/
+[
+  {
+    "tableName": "CITY",
+    "schema": true,
+    "attributes": {
+      "name": {
+        "type": "STRING"
+      },
+      "stateId": {
+        "model": "State"
+      },
+      "countryId": {
+        "model": "Country"
+      },
+      "isActive": {
+        "type": "BOOLEAN",
+        "defaultsTo": true
+      },
+      "isDeleted": {
+        "type": "BOOLEAN",
+        "defaultsTo": false
+      },
+      "updatedBy": {
+        "model": "User"
+      },
+      "createdBy": {
+        "model": "User"
+      },
+      "sortingSequence": {
+        "type": "number"
+      },
+      "syncId": {
+        "type": "string"
+      }
+    }
+  }
+]
