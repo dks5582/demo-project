@@ -7,23 +7,28 @@ import { PrismaService } from 'src/prisma/prisma.service';
 export class UsersService {
   constructor(private prisma: PrismaService) {}
 
-  create(createUserDto: CreateUserDto) {
-    return 'This action adds a new user';
+  async createNewUser(createUserDto: CreateUserDto) {
+    //return this.prisma.user.create({data: createUserDto})
+
+    return await this.prisma.$executeRawUnsafe(`INSERT INTO public."user" (name,email,password,createdbyid) 
+                                  VALUES('${createUserDto.name}','${createUserDto.email}','${createUserDto.password}',${createUserDto.createdbyid});`);
+    
+    //return Qry;
   }
 
-  findAll() {
-    return `This action returns all users`;
+  async findAll() {
+    return await this.prisma.$queryRawUnsafe(`SELECT * FROM public."user"`);
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} user`;
+  async findOne(id: number) {
+    return await this.prisma.$queryRaw`SELECT id,name,email,createdbyid FROM public."user" where id = ${id}`;
   }
 
   update(id: number, updateUserDto: UpdateUserDto) {
-    return `This action updates a #${id} user`;
+    return this.prisma.user.update({where : {id}, data: updateUserDto})
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} user`;
+  async remove(id: number) {
+    return await this.prisma.$executeRawUnsafe(`DELETE FROM public."user" where id = ${id}`);
   }
 }

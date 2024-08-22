@@ -13,56 +13,66 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model User {
+model user {
   id            Int         @id @default(autoincrement())
   name          String
   email         String      @unique
   password      String
-  createdAt     DateTime    @default(now())
-  updatedAt     DateTime    @updatedAt
-  cityId        Int?
-  stateId       Int?
-  countryId     Int?
+  createdat     DateTime    @default(now())
+  updatedat     DateTime?   @updatedAt
+  createdbyid   Int?
+  countries     country[]
+  states        state[]
+  cities        city[]
 }
 
-model Country {
+model country {
   id            Int         @id @default(autoincrement())
-  name          String      
-  isActive      Boolean     @default(true)
-  isDeleted     Boolean     @default(false)
-  updatedById   Int?
-  createdById   Int?
-  createdAt     DateTime    @default(now())
-  updatedAt     DateTime    @updatedAt
-  sortingSeq    Int?
-  syncId        String?
+  name          String      @unique    
+  isactive      Boolean     @default(true)
+  isdeleted     Boolean     @default(false)
+  createdby     user?       @relation(fields: [createdbyid], references: [id])
+  createdbyid   Int?
+  updatedbyid   Int?
+  createdat     DateTime    @default(now())
+  updatedat     DateTime    @updatedAt
+  sortingseq    Int?
+  syncid        String?
+  states        state[]
+  cities        city[]
 }
 
-model State {
+model state {
   id            Int         @id @default(autoincrement())
-  countryId     Int?
-  name          String      
-  isActive      Boolean     @default(true)
-  isDeleted     Boolean     @default(false)
-  updatedById   Int?
-  createdById   Int?
-  createdAt     DateTime    @default(now())
-  updatedAt     DateTime    @updatedAt
-  sortingSeq    Int?
-  syncId        String?
+  country       country?    @relation(fields: [countryid], references: [id])
+  countryid     Int?
+  name          String      @unique
+  isactive      Boolean     @default(true)
+  isdeleted     Boolean     @default(false)
+  createdby     user?       @relation(fields: [createdbyid], references: [id])
+  createdbyid   Int?
+  updatedbyid   Int?
+  createdat     DateTime    @default(now())
+  updatedat     DateTime    @updatedAt
+  sortingseq    Int?
+  syncid        String?
+  cities        city[]
 }
 
-model City {
+model city {
   id            Int         @id @default(autoincrement())
-  stateId       Int?
-  countryId     Int?
-  name          String      
-  isActive      Boolean     @default(true)
-  isDeleted     Boolean     @default(false)
-  updatedById   Int?
-  createdById   Int?
-  createdAt     DateTime    @default(now())
-  updatedAt     DateTime    @updatedAt
-  sortingSeq    Int?
-  syncId        String?
+  state         state?      @relation(fields: [stateid], references: [id])
+  stateid       Int?
+  country       country?    @relation(fields: [countryid], references: [id])
+  countryid     Int?
+  name          String      @unique     
+  isactive      Boolean     @default(true)
+  isdeleted     Boolean     @default(false)
+  createdby     user?       @relation(fields: [createdbyid], references: [id])
+  createdbyid   Int?
+  updatedbyid   Int?
+  createdat     DateTime    @default(now())
+  updatedat     DateTime    @updatedAt
+  sortingseq    Int?
+  syncid        String?
 }
