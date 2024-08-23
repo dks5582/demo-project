@@ -3,15 +3,18 @@ import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { PrismaService } from 'src/prisma/prisma.service';
 
+
 @Injectable()
 export class UsersService {
   constructor(private prisma: PrismaService) {}
 
-  async createNewUser(createUserDto: CreateUserDto) {
+  async createNewUser(createUserDto: CreateUserDto, userId: number) {
     //return this.prisma.user.create({data: createUserDto})
+    
+    
 
     return await this.prisma.$executeRawUnsafe(`INSERT INTO public."user" (name,email,password,createdbyid) 
-                                  VALUES('${createUserDto.name}','${createUserDto.email}','${createUserDto.password}',${createUserDto.createdbyid});`);
+                                  VALUES('${createUserDto.name}','${createUserDto.email}','${createUserDto.password}',${userId});`);
     
     //return Qry;
   }
