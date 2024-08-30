@@ -35,7 +35,7 @@ model country {
   createdbyid   Int?
   updatedbyid   Int?
   createdat     DateTime    @default(now())
-  updatedat     DateTime    @updatedAt
+  updatedat     DateTime?    @updatedAt
   sortingseq    Int?
   syncid        String?
   states        state[]
@@ -53,7 +53,7 @@ model state {
   createdbyid   Int?
   updatedbyid   Int?
   createdat     DateTime    @default(now())
-  updatedat     DateTime    @updatedAt
+  updatedat     DateTime?    @updatedAt
   sortingseq    Int?
   syncid        String?
   cities        city[]
@@ -72,7 +72,7 @@ model city {
   createdbyid   Int?
   updatedbyid   Int?
   createdat     DateTime    @default(now())
-  updatedat     DateTime    @updatedAt
+  updatedat     DateTime?    @updatedAt
   sortingseq    Int?
   syncid        String?
 }

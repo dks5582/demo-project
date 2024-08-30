@@ -65,6 +65,15 @@ CREATE TABLE "city" (
 -- CreateIndex
 CREATE UNIQUE INDEX "user_email_key" ON "user"("email");
 
+-- CreateIndex
+CREATE UNIQUE INDEX "country_name_key" ON "country"("name");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "state_name_key" ON "state"("name");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "city_name_key" ON "city"("name");
+
 -- AddForeignKey
 ALTER TABLE "country" ADD CONSTRAINT "country_createdbyid_fkey" FOREIGN KEY ("createdbyid") REFERENCES "user"("id") ON DELETE SET NULL ON UPDATE CASCADE;
 

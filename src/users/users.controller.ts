@@ -21,12 +21,12 @@ export class UsersController {
   //   console.log(user111);
   // }
 
-  @Get('profile')
-  @UseGuards(JwtAuthGuard)
-  @ApiBearerAuth()
-  async getUser(@User() user) {
-  console.log(user.id);
-}
+//   @Get('profile')
+//   @UseGuards(JwtAuthGuard)
+//   @ApiBearerAuth()
+//   async getUser(@User() user) {
+//   console.log(user.id);
+// }
 
   @Post()
   @UseGuards(JwtAuthGuard)
@@ -49,6 +49,8 @@ export class UsersController {
   }
 
   @Get(':id')
+  @UseGuards(JwtAuthGuard)
+  @ApiBearerAuth()
   @ApiOkResponse({type: UserEntity})
   async findOne(@Param('id', ParseIntPipe) id: number) {
     //return await this.usersService.findOne(id);
@@ -56,12 +58,16 @@ export class UsersController {
   }
 
   @Patch(':id')
+  @UseGuards(JwtAuthGuard)
+  @ApiBearerAuth()
   @ApiCreatedResponse({type: UserEntity})
   update(@Param('id') id: string, @Body() updateUserDto: UpdateUserDto) {
     return this.usersService.update(+id, updateUserDto);
   }
 
   @Delete(':id')
+  @UseGuards(JwtAuthGuard)
+  @ApiBearerAuth()
   @ApiOkResponse({type: UserEntity})
   remove(@Param('id') id: string) {
     return this.usersService.remove(+id);
